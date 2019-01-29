@@ -108,13 +108,13 @@ function iconPrint(){
     else{
         console.log(end-start);
         //Perform a while loop
-        while(start < end){
+        do{
             document.getElementById('warning').innerHTML = '';
             var icon = document.createElement('i');
             icon.className = "fas fa-shield-alt fa-5x";
             var element = document.getElementById('whileIcons');
             element.appendChild(icon);
             start++;
-        }
+        } while(start < end);
     }
 }
