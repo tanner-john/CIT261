@@ -27,10 +27,11 @@ function getMonsterStat(){
         console.log(typeValue);
         var rawData = request.responseText;
         var data = JSON.parse(rawData);
-        document.getElementById('mHealth').innerHTML = data.monsters[nameValue]['level'][lvlValue][typeValue].health;
-        document.getElementById('mMove').innerHTML = data.monsters[nameValue]['level'][lvlValue][typeValue].move;
-        document.getElementById('mAttack').innerHTML = data.monsters[nameValue]['level'][lvlValue][typeValue].attack;
-        document.getElementById('mRange').innerHTML = data.monsters[nameValue]['level'][lvlValue][typeValue].range;
+        var monster = data.monsters[nameValue]['level'][lvlValue][typeValue];
+        document.getElementById('mHealth').innerHTML = monster.health;
+        document.getElementById('mMove').innerHTML = monster.move;
+        document.getElementById('mAttack').innerHTML = monster.attack;
+        document.getElementById('mRange').innerHTML = monster.range;
         var para = document.createElement('p');
         var node = document.createTextNode(JSON.stringify(data.monsters[nameValue]['level'][lvlValue][typeValue]));
         para.appendChild(node);
