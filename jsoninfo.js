@@ -31,6 +31,11 @@ function getMonsterStat(){
         document.getElementById('mMove').innerHTML = data.monsters[nameValue]['level'][lvlValue][typeValue].move;
         document.getElementById('mAttack').innerHTML = data.monsters[nameValue]['level'][lvlValue][typeValue].attack;
         document.getElementById('mRange').innerHTML = data.monsters[nameValue]['level'][lvlValue][typeValue].range;
+        var para = document.createElement('p');
+        var node = document.createTextNode(JSON.stringify(data.monsters[nameValue]['level'][lvlValue][typeValue]));
+        para.appendChild(node);
+        var element = document.getElementById('jsonString');
+        element.appendChild(para);
     }
     request.send();
 }
