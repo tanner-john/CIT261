@@ -2,3 +2,8 @@
     text-transform: uppercase;
     color: red;
 }
+
+#pandaImg{
+    width: auto;
+    height: 25%;
+}
