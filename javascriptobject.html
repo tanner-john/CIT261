@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -22,7 +22,7 @@
     </div>
 
     <div class='w3-container w3-center w3-light-blue'>
-        <h3>Zookeeper Mania!</h3>
+        <h3>Panda Mania!</h3>
     </div>
 
     <div class='w3-container w3-center w3-margin-top'>
@@ -31,33 +31,42 @@
 
     <div id='gameContainer' class='w3-margin' style='display: none'>
 
-        <div class='w3-row'>
-            <div class='w3-col s4'>
-                <div class="w3-container" id='game'>
-                    <img src='pics/panda.jpg' id='pandaImg'>
-                </div>
-                <div class="w3-light-grey">
-                    <div id="pFood" class="w3-container w3-green" style="height:24px;width:60%;">
-                        <!-- PROGRESS BAR -->
-                    </div>
-                </div>
-                <p>Food</p>
-                <div class="w3-light-grey">
-                    <div id="pWater" class="w3-container w3-blue" style="height:24px;width:60%;">
-                        <!-- PROGRESS BAR -->
-                    </div>
-                </div>
-                <p>Water</p>
-            </div>
-            <div class='w3-col s4 w3-container'>
-                <!-- EMPTY CONTAINER-->
-            </div>
-            <div class='w3-col s4 w3-container'>
-                <!-- EMPTY CONTAINER -->
+        <div class="w3-container w3-center">
+            <img src='pics/panda.jpg' id='pandaImg' class='mainImg' style = 'display: inline-block;'>
+            <img src='pics/death.jpg' id='loseImg' class='mainImg' style='display: none;'>
+            <img src='pics/happyface.jpg' id='winImg' class='mainImg' style = 'display: none'>
+        </div>
+        <div class="w3-light-grey w3-margin-top">
+            <div id="pFood" class="w3-container w3-red w3-center" style="height:24px;width:60%;">
+                <!-- FOOD PROGRESS BAR -->
             </div>
         </div>
+        <p>Food</p>
+        <div class="w3-light-grey">
+            <div id="pWater" class="w3-container w3-blue" style="height:24px;width:60%;">
+                <!-- WATER PROGRESS BAR -->
+            </div>
+        </div>
+        <p>Water</p>
+        <div class="w3-light-grey">
+            <div id="pEnergy" class="w3-container w3-green" style="height:24px;width:60%;">
+                <!-- ENERGY PROGRESS BAR -->
+            </div>
+        </div>
+        <p>Energy</p>
+        <div class="w3-light-grey">
+            <div id="pHappiness" class="w3-container w3-yellow" style="height:24px;width:60%;">
+                <!-- HAPPINESS PROGRESS BAR -->
+            </div>
+        </div>
+        <p>Happiness</p>
 
-
+        <div class='w3-container w3-center'>
+            <button onclick='eat();' class='w3-btn w3-green w3-round'>FOOD</button>
+            <button onclick='drink();' class='w3-btn w3-green w3-round'>WATER</button>
+            <button onclick='sleep();' class='w3-btn w3-green w3-round'>SLEEP</button>
+            <button onclick='play();' class='w3-btn w3-green w3-round'>PLAY</button>
+        </div>
 
     </div>
 
