@@ -17,36 +17,36 @@ Animal.prototype.eat = function(){
 }
 
 Animal.prototype.drink = function(){
-    if(panda.thirst < 100){
-        panda.thirst += 10;
-        if(panda.happiness < 100){
-            panda.happiness += 3;
+    if(this.thirst < 100){
+        this.thirst += 10;
+        if(this.happiness < 100){
+            this.happiness += 3;
         }
     }
 }
 
 Animal.prototype.sleep = function(){
-    if(panda.energy < 100){
-        panda.energy += 10;
-        if(panda.happiness < 100){
-            panda.happiness += 3;
+    if(this.energy < 100){
+        this.energy += 10;
+        if(this.happiness < 100){
+            this.happiness += 3;
         }
     }
 }
 
 Animal.prototype.play = function(){
-    if(panda.happiness < 100){
-        if((panda.energy - 30) >= 0){
-            panda.energy -= 30;
-            panda.happiness += 10;
+    if(this.happiness < 100){
+        if((this.energy - 30) >= 0){
+            this.energy -= 30;
+            this.happiness += 10;
         }
-        else if(panda.energy <= 0){
-            panda.energy = 0;
+        else if(this.energy <= 0){
+            this.energy = 0;
         }
         else{
-            var increase = panda.energy;
-            panda.energy -= panda.energy;
-            panda.happiness += increase;
+            var increase = this.energy;
+            this.energy -= this.energy;
+            this.happiness += increase;
         }
     }
 }
