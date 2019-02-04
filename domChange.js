@@ -1,4 +1,3 @@
-
 //Game Object
 var Card = function(name, value) {
     this.name = name;
@@ -94,6 +93,10 @@ function checkMatch(cardA, cardB){
         //Decrease flips by 1
     }
     secondFlip = false;
+}
+
+function flipCard(){
+    document.getElementById('flip-card-inner').style.transform = 'rotateY(180deg)';
 }
 
 //Game Operation Functions "Actual Gameplay"
