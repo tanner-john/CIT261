@@ -8,6 +8,11 @@
     height: 250px;
 }
 
+.cardImg{
+    width: auto;
+    height: 150px;
+}
+
 .flip-card {
 	background-color: transparent;
 	width: 300px;

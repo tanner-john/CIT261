@@ -27,7 +27,8 @@ var totalFlips = 10;
 var points = 0;
 
 function boardSetup(){
-    
+    console.log('boardStup() function called!');
+    document.getElementById('playButton').style.display = 'none';
 }
 
 // Game Functions
@@ -95,8 +96,12 @@ function checkMatch(cardA, cardB){
     secondFlip = false;
 }
 
-function flipCard(){
-    document.getElementById('flip-card-inner').style.transform = 'rotateY(180deg)';
+function flipCard(event){
+    document.getElementById(event.target.parentElement.parentElement.id).style.transform = 'rotateY(180deg)';
+}
+
+function flipCardBack(event){
+    document.getElementById(event.target.parentElement.parentElement.id).style.transform = 'rotateY(0deg)';
 }
 
 //Game Operation Functions "Actual Gameplay"
