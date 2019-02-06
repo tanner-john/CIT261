@@ -38,7 +38,6 @@ function boardSetup(){
     shuffle(cards);
     consoleCards(cards);
     console.log('boardStup() function called!');
-    document.getElementById('playButton').style.display = 'none';
     document.getElementById('resetButton').style.visibility = 'visible';
     for(var x = 0; x < cards.length; x++){
         document.getElementById('card' + x).innerHTML = "<div class='flip-card w3-margin' id='flip-card" + x + "'><div class='flip-card-inner' id='flip-card-inner" + x + "'><div class='flip-card-front'><img src='pics/cardBack.png' alt='Back of Playing Card' class='cardImg' onclick='flipCard(event)' id='" + cards[x].id + "'></div><div class='flip-card-back'><img src='" + cards[x].img + "' alt='" + cards[x].name + "' class='cardImg'></div></div></div>";
@@ -113,7 +112,7 @@ function checkMatch(){
     console.log('Flip One = ' + flipOne);
     console.log('Flip Two = ' + flipTwo);
     if(flipOne == flipTwo){
-        points++;
+        points += 36;
         console.log('Match!');
     }
     else{
@@ -125,8 +124,10 @@ function checkMatch(){
     }
     document.getElementById('points').innerHTML = ' ' + points;
     document.getElementById('attempts').innerHTML = ' ' + totalFlips;
-    if(points == 6){
-        winCondition();
+    if(points == 216){
+        var winAlert = setTimeout(function(){
+            alert('You Won!');
+        }, 2000);
     }
 }
 
@@ -146,8 +147,4 @@ function flipCard(event){
 
 function stopTimer(){
     clearTimeout(timer);
-}
-
-function winCondition(){
-    alert('You Won!');
 }
