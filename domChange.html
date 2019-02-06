@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,26 +10,53 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="domChange.js"></script>
 </head>
+
 <body>
 
     <div class='w3-container w3-blue w3-center'>
-        <h3 class='w3-text-white'>CARD MATCH!</h3>
+        <h1 class='w3-text-white'>CARD MATCH!</h1>
     </div>
 
-    <div class='w3-container w3-center w3-margin'>
+    <div class='w3-container w3-center w3-margin' id='headerContainer'>
         <button class='w3-btn w3-green w3-round' id='playButton' onclick='boardSetup()'>PLAY!</button>
     </div>
 
-    <div class="flip-card w3-margin" id='flip-card'>
-        <div class="flip-card-inner" id='flip-card-inner'>
-            <div class="flip-card-front">
-                <img src="pics/cardBack.png" alt="Back of Playing Card" class='cardImg' onclick='flipCard(event)'>
+    <div class='w3-container w3-green'>
+        <div class='w3-row'>
+            <div class='w3-col s6'>
+                <div class='w3-container w3-center'>
+                    <h3>Points :<span id='points'> 0</span></h3>
+                </div>
             </div>
-            <div class="flip-card-back">
-                <img src="pics/aceofspades.png" alt="Ace of Spade" class='cardImg' onclick='flipCardBack(event)'>
+            <div class='w3-col s6'>
+                <div class='w3-container w3-center'>
+                    <h3>Attempts Left :<span id='attempts'> 10</span></h3>
+                </div>
             </div>
         </div>
     </div>
 
+    <div class='w3-row'>
+        <div class='w3-col l3' id='card0'></div>
+        <div class='w3-col l3' id='card1'></div>
+        <div class='w3-col l3' id='card2'></div>
+        <div class='w3-col l3' id='card3'></div>
+    </div>
+
+    <div class='w3-row'>
+        <div class='w3-col l3' id='card4'></div>
+        <div class='w3-col l3' id='card5'></div>
+        <div class='w3-col l3' id='card6'></div>
+        <div class='w3-col l3' id='card7'></div>
+    </div>
+
+    <div class='w3-row'>
+        <div class='w3-col l3' id='card8'></div>
+        <div class='w3-col l3' id='card9'></div>
+        <div class='w3-col l3' id='card10'></div>
+        <div class='w3-col l3' id='card11'></div>
+    </div>
+
 </body>
+
 </html>
