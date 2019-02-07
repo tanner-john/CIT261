@@ -39,7 +39,16 @@ function boardSetup(){
     consoleCards(cards);
     document.getElementById('resetButton').style.visibility = 'visible';
     for(var x = 0; x < cards.length; x++){
-        document.getElementById('card' + x).innerHTML = "<div class='flip-card w3-margin' id='flip-card" + x + "'><div class='flip-card-inner' id='flip-card-inner" + x + "'><div class='flip-card-front'><img src='pics/cardBack.png' alt='Back of Playing Card' class='cardImg' onclick='flipCard(event)' id='" + cards[x].id + "'></div><div class='flip-card-back'><img src='" + cards[x].img + "' alt='" + cards[x].name + "' class='cardImg'></div></div></div>";
+        document.getElementById('card' + x).innerHTML = "<div class='flip-card w3-margin' id='flip-card" + x + "'>\
+                                                            <div class='flip-card-inner' id='flip-card-inner" + x + "'>\
+                                                                <div class='flip-card-front'>\
+                                                                    <img src='pics/cardBack.png' alt='Back of Playing Card' class='cardImg' onclick='flipCard(event)' id='" + cards[x].id + "'>\
+                                                                </div>\
+                                                                <div class='flip-card-back'>\
+                                                                    <img src='" + cards[x].img + "' alt='" + cards[x].name + "' class='cardImg'>\
+                                                                </div>\
+                                                            </div>\
+                                                        </div>";
     }
 }
 
