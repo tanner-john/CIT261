@@ -37,7 +37,6 @@ var timer;
 function boardSetup(){
     shuffle(cards);
     consoleCards(cards);
-    console.log('boardStup() function called!');
     document.getElementById('resetButton').style.visibility = 'visible';
     for(var x = 0; x < cards.length; x++){
         document.getElementById('card' + x).innerHTML = "<div class='flip-card w3-margin' id='flip-card" + x + "'><div class='flip-card-inner' id='flip-card-inner" + x + "'><div class='flip-card-front'><img src='pics/cardBack.png' alt='Back of Playing Card' class='cardImg' onclick='flipCard(event)' id='" + cards[x].id + "'></div><div class='flip-card-back'><img src='" + cards[x].img + "' alt='" + cards[x].name + "' class='cardImg'></div></div></div>";
@@ -69,7 +68,6 @@ function shuffle(array) {
         array[m] = array[i];
         array[i] = t;
     }
-    console.log('Cards Shuffled!');
     return array;
 }
 
@@ -86,11 +84,9 @@ function firstFlip(id){
         if(cards[x].id == id){
             flipOne = cards[x].value;
             cardID1 = cards[x].id;
-            console.log(cardID1);
         }
     }
     flipCounter = true;
-    console.log('firstFlip flipOne ' + cardID1);
 }
 
 //Store value of second card flipped and check match
@@ -99,18 +95,14 @@ function secondFlip(id){
         if(cards[x].id == id){
             flipTwo = cards[x].value;
             cardID2 = cards[x].id;
-            console.log(cardID2);
         }
     }
     flipCounter = false;
-    console.log('firstFlip flipTwo ' + cardID2);
     checkMatch();
 }
 
 //Check the cards for a match
 function checkMatch(){
-    console.log('Flip One = ' + flipOne);
-    console.log('Flip Two = ' + flipTwo);
     if(flipOne == flipTwo){
         points += 36;
         console.log('Match!');
@@ -134,7 +126,6 @@ function checkMatch(){
 function flipCard(event){
     document.getElementById(event.target.parentElement.parentElement.id).style.transform = 'rotateY(180deg)';
     var cardId = event.target.id;
-    console.log(cardId + '- Flipped');
     if(!flipCounter){
         eventTarget1 = document.getElementById(event.target.parentElement.parentElement.id);
         firstFlip(cardId);
