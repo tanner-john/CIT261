@@ -6,7 +6,7 @@ var Card = function(name, value, id, img) {
     this.img = img;
 }
 
-//Object creation
+//Object Creation
 var as1 = new Card('Ace of Spade 1', 0, 'as1', 'pics/aceofspades.png');
 var as2 = new Card('Ace of Spade 2', 0, 'as2', 'pics/aceofspades.png');
 var ac1 = new Card('Ace of Clubs 1', 1, 'ac1', 'pics/aceofclubs.png');
@@ -20,7 +20,7 @@ var sk2 = new Card('Suicide King 2', 4, 'sk2', 'pics/suicideking.png');
 var oej1 = new Card('One Eyed Jack 1', 5, 'oej1', 'pics/oneeyedjack.png');
 var oej2 = new Card('One Eyed Jack 2', 5, 'oej2','pics/oneeyedjack.png');
 
-//Game variables
+//Game Variables
 var cards = new Array(as1, as2, ac1, ac2, ah1, ah2, ad1, ad2, sk1, sk2, oej1, oej2);
 var flipCounter = false;
 var flipOne = 0;
@@ -33,7 +33,7 @@ var eventTarget1 = '';
 var eventTarget2 = '';
 var timer;
 
-
+//Dynamically Setup The Board
 function boardSetup(){
     shuffle(cards);
     consoleCards(cards);
@@ -52,6 +52,7 @@ function boardSetup(){
     }
 }
 
+// Refresh the game
 function refresh(){
     points = 0;
     totalFlips = 10;
@@ -80,6 +81,7 @@ function shuffle(array) {
     return array;
 }
 
+//Console print the cards to ensure random card placement
 function consoleCards(array){
     for(x in array){
         console.log(x + '. ' + array[x].name);
@@ -132,9 +134,11 @@ function checkMatch(){
     }
 }
 
+//Handle card flip animation
 function flipCard(event){
     document.getElementById(event.target.parentElement.parentElement.id).style.transform = 'rotateY(180deg)';
     var cardId = event.target.id;
+    //Store the ID of the card fipped for value checking
     if(!flipCounter){
         eventTarget1 = document.getElementById(event.target.parentElement.parentElement.id);
         firstFlip(cardId);
@@ -145,6 +149,7 @@ function flipCard(event){
     }
 }
 
+//Stops setTimeout function
 function stopTimer(){
     clearTimeout(timer);
 }

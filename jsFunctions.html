@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Basic JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- W3 CSS Library -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Font Awesome Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Personal CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- Personal Javascript -->
+    <script src="jsFunctions.js"></script>
+</head>
+<body>
+
+    <div class='w3-bar w3-black'>
+        <a href='index.html' class='w3-bar-item w3-button'>HOME</a>
+    </div>
+    <div class='w3-container w3-center w3-blue'>
+        <h3>For Loop Example</h3>
+    </div>
+    <div class='w3-container w3-center'>
+        <p>Input Loop Number (1 - 10): <input type='text' name='loop'> <button onclick='basicForLoop()' class='w3-btn w3-green w3-round'>Generate</button></p>
+        <div id='fLoopWarning' class='w3-text-red'>
+            <!-- WARNING MESSAGE -->
+        </div>
+        <div id='textfield'>
+            <!-- FOR LOOP TEXT HERE -->
+        </div>
+    </div>
+
+    <div class='w3-container w3-center w3-blue w3-margin-top w3-margin-bottom'>
+        <h3>For-In Loop Example</h3>
+    </div>
+    <div class='w3-container'>
+        <div class='w3-row'>
+            <div class='w3-col m4'>
+                <label>Container: </label>
+                <input type='text' name='container'>
+            </div>
+            <div class='w3-col m4'>
+                <label>Adjective: </label>
+                <input type='text' name='adj1'>
+            </div>
+            <div class='w3-col m4'>
+                <label>Noun: </label>
+                <input type='text' name='noun1'>
+            </div>
+        </div>
+        <br>
+        <div class='w3-row'>
+            <div class='w3-col m4'>
+                <label>Animal: </label>
+                <input type='text' name='animal'>
+            </div>
+            <div class='w3-col m4'>
+                <label>Vegetable: </label>
+                <input type='text' name='vegetable'>
+            </div>
+            <div class='w3-col m4'>
+                <label>Color: </label>
+                <input type='text' name='color'>
+            </div>
+        </div>
+        <br>
+        <div class='w3-row'>
+            <div class='w3-col m4'>
+                <label>Adjective: </label>
+                <input type='text' name='adj2'>
+            </div>
+            <div class='w3-col m4'>
+                <div class='w3-container'></div>
+            </div>
+            <div class='w3-col m4'>
+                <div class='w3-container'></div>
+            </div>
+        </div>
+        <br>
+        <div class='w3-container w3-center'>
+            <button onclick='madlibGenerator()' class='w3-btn w3-green w3-round'>Generate</button>
+        </div>
+        <div>
+            <ul id='userInput'>
+                
+            </ul>
+        </div>
+        <div id='madlib'>
+
+        </div>
+    </div>
+
+    <div class='w3-container w3-center w3-blue w3-margin-top w3-margin-bottom'>
+        <h3>While Loop Example</h3>
+    </div>
+    <div class='w3-container w3-center'>
+        <p>Enter a starting value and a ending value.</p>
+        <p>The starting value must be lower than the ending value.</p>
+        <p>The difference between values must be less than 100!</p>
+        <p id='warning' class='w3-text-red'></p>
+    </div>
+    <div class='w3-container'>
+        <div class='w3-row'>
+            <div class='w3-col w3-center' style='width: 50%'>
+                <label>Start: </label>
+                <input type='text' id='startValue'>
+            </div>
+            <div class='w3-col w3-center' style='width: 50%'>
+                <label>End: </label>
+                <input type='text' id='endValue'>
+            </div>
+        </div>
+        <div class='w3-row w3-center'>
+            <div class='w3-col s12'>
+                <button onclick="iconPrint()" class='w3-btn w3-green w3-round'>While Loop</button>
+            </div>
+        </div>
+    </div>
+    <div class='w3-container w3-center w3-margin-top' id='whileIcons'>
+        <!-- WHILE LOOP ICONS HERE -->
+    </div>
+
+
+</body>
+</html>

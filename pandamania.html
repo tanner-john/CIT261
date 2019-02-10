@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript Objects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- W3 CSS Library -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Font Awesome Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Personal CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- Personal Javascript -->
+    <script src="pandamania.js"></script>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <div class='w3-bar w3-black'>
+        <a href='index.html' class='w3-bar-item w3-button'>HOME</a>
+    </div>
+
+    <div class='w3-container w3-center w3-light-blue'>
+        <h3>Panda Mania!</h3>
+    </div>
+
+    <div class='w3-container w3-center w3-margin-top'>
+        <button onclick='startGame()' class='w3-btn w3-green w3-round' id='start'>Start</button>
+    </div>
+
+    <div id='gameContainer' class='w3-margin' style='display: none'>
+
+        <div class="w3-container w3-center">
+            <img src='pics/panda.jpg' id='pandaImg' class='mainImg' style = 'display: inline-block;'>
+            <img src='pics/death.jpg' id='loseImg' class='mainImg' style='display: none;'>
+            <img src='pics/happyface.jpg' id='winImg' class='mainImg' style = 'display: none'>
+        </div>
+        <div class='w3-container w3-margin-top'>
+            <div class="w3-light-grey">
+                <div id="pFood" class="w3-container w3-red w3-center" style="height:24px;width:100%;">
+                    <!-- FOOD PROGRESS BAR -->
+                </div>
+            </div>
+            <p>Food</p>
+            <div class="w3-light-grey">
+                <div id="pWater" class="w3-container w3-blue" style="height:24px;width:100%;">
+                    <!-- WATER PROGRESS BAR -->
+                </div>
+            </div>
+            <p>Water</p>
+            <div class="w3-light-grey">
+                <div id="pEnergy" class="w3-container w3-green" style="height:24px;width:100%;">
+                    <!-- ENERGY PROGRESS BAR -->
+                </div>
+            </div>
+            <p>Energy</p>
+            <div class="w3-light-grey">
+                <div id="pHappiness" class="w3-container w3-yellow" style="height:24px;width:100%;">
+                    <!-- HAPPINESS PROGRESS BAR -->
+                </div>
+            </div>
+            <p>Happiness</p>
+        </div>
+
+        <div class='w3-container w3-center'>
+            <button onclick='eat();' class='w3-btn w3-green w3-round'>FOOD</button>
+            <button onclick='drink();' class='w3-btn w3-green w3-round'>WATER</button>
+            <button onclick='sleep();' class='w3-btn w3-green w3-round'>SLEEP</button>
+            <button onclick='play();' class='w3-btn w3-green w3-round'>PLAY</button>
+        </div>
+
+    </div>
+
+    <!--
+        <div class='w3-container w3-center'>
+            <label>Food</label> <progress id="hunger" max='100'></progress><br>
+            <label>Water</label> <progress id="thirst" max='100'></progress><br>
+            <label>Energy</label> <progress id="energy" max='100'></progress><br>
+            <label>Happiness</label> <progress id="happiness" max='100'></progress>
+        </div>
+    -->
+
+</body>
+</html>
