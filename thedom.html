@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- META INFO -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Page TITLE-->
+    <title></title>
+    <!-- W3 CSS Library -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Personal Javascript -->
+    <script src="thedom.js"></script>
+</head>
+<body>
+    
+    <div class='w3-container w3-center w3-blue'>
+        <h3>DOM Manipulation</h3>
+    </div>
+
+    <div class='w3-container w3-grey'>
+        <p class='w3-text-white'><strong>*** REPLACED PARAGRAPHS CAN NOT BE DELETED!!!</strong></p>
+    </div>
+    <div class='w3-container w3-grey' id='paragraphs'>
+        <button class='w3-btn w3-green w3-round w3-margin' onclick='addpara()'>ADD 'P' ELEM</button>
+        <button class='w3-btn w3-green w3-round w3-margin' onclick='removepara()'>REMOVE 'P' ELEM</button>
+        <button class='w3-btn w3-green w3-round w3-margin' onclick='replacepara()'>REPLACE 'P' ELEM</button>
+        <p id='para0'>Add some paragraphs below here!</p>
+    </div>
+
+    <div class='w3-container w3-yellow' id='table'>
+        <label>First Name</label>
+        <input class='w3-input w3-border' type='text' id='fname'>
+        <label>Last Name</label>
+        <input class='w3-input w3-border' type='text' id='lname'>
+        <label>Occupation</label>
+        <input class='w3-input w3-border' type='text' id='job'>
+        <p class='w3-text-red'><strong>*** USE BOTTOM BUTTON FIRST BEFORE USING TOP BUTTON!</strong></p>
+        <div class='w3-row w3-center'>
+            <div class='w3-col l6'>
+                <button class='w3-btn w3-green w3-round w3-margin' onclick='insertFirst()'>TOP</button>
+            </div>
+            <div class='w3-col l6'>
+                <button class='w3-btn w3-green w3-round w3-margin' onclick='submit()'>BOTTOM</button>
+            </div>
+        </div>
+    </div>
+    <div class = 'w3-container w3-margin-top'>
+
+        <table class='w3-table-all w3-hoverable w3-centered' id='masterTable'>
+            <tr class='w3-green'>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Occupation</td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>
