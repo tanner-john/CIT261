@@ -46,7 +46,14 @@
     <div class='w3-container w3-margin-bottom w3-center w3-light-blue' id='pageSelection'>
         <h3><strong>Student Selection</strong></h3>
         <p class='w3-text-red'><strong>** To remove students go to the student's grade sheet **</strong></p>
-        <button class='w3-btn w3-green w3-round' onclick='saveList()'>SAVE</button>
+        <div class='w3-row'>
+            <div class='w3-col l6 w3-center'>
+                <button class='w3-btn w3-green w3-round' onclick='saveStudentList()'>SAVE</button>
+            </div>
+            <div class='w3-col l6 w3-center'>
+                <button class='w3-btn w3-green w3-round' onclick='loadStudentList()'>LOAD</button>
+            </div>
+        </div>
         <div class='w3-container w3-margin-bottom'></div>
     </div>
 
@@ -68,13 +75,9 @@
         <!-- DYNAMIC ROWS HERE-->
     </div>
 
-    <div class='w3-container' id='assignmentsList'>
+    <div class='w3-container' id='assignmentsTotal'>
         
     </div>
-
-    <script>
-        checkList();
-    </script>
 
 </body>
 </html>
