@@ -65,3 +65,7 @@
 	animation-iteration-count: 6;
 	animation-direction: alternate;
 }
+
+.gradeBtn{
+	margin-top: 8px;
+}

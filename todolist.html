@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- META INFO -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Page TITLE-->
+        <title>Local Storage</title>
+        <!-- W3 CSS Library -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <!-- Font Awesome Icons-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <!-- Personal CSS Stylesheet -->
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <!-- Personal Javascript -->
+        <script src="todolist.js"></script>
+    </head>
+<body>
+    
+    <!-- NAVIGATION -->
+    <div class='w3-bar w3-black'>
+        <a href='index.html' class='w3-bar-item w3-button'>HOME</a>
+    </div>
+
+    <div class='w3-container w3-center'>
+        <h3 class='w3-text-red'><strong>Simple To-Do List!</strong></h3>
+    </div>
+
+    <div class='w3-container w3-margin w3-center'>
+        <h4>To-Do List Input</h4>
+        <h4>Click an item to remove it from the list!</h4>
+        <input type='text' value='Type Task Here' id='box' onfocus='removeText(this)'>
+        <button class='w3-btn w3-green w3-round' onclick='addItem()'>Add Item</button>
+        <button class='w3-btn w3-green w3-round' onclick='saveList()'>Save List</button>
+        <button class='w3-btn w3-green w3-round' onclick='loadList()'>Load List</button>
+    </div>
+
+    <div class='w3-container w3-center' id='list'></div>
+
+    <script>
+        checkList();
+    </script>
+
+</body>
+</html>

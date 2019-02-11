@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- META INFO -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Page TITLE-->
+        <title>Local Storage</title>
+        <!-- W3 CSS Library -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <!-- Font Awesome Icons-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <!-- Personal CSS Stylesheet -->
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <!-- Personal Javascript -->
+        <script src="gradesheet.js"></script>
+    </head>
+<body>
+    
+    <!-- NAVIGATION -->
+    <div class='w3-bar w3-black'>
+        <a href='index.html' class='w3-bar-item w3-button'>HOME</a>
+        <a href='todolist.html' class='w3-bar-item w3-button'>TO-DO-LIST</a>
+    </div>
+
+    <div class='w3-container w3-center'>
+        <h3 class='w3-text-red' id='pageHeading'><strong>Student Page</strong></h3>
+    </div>
+
+    <div class='w3-container w3-center w3-light-blue' id='pageInput'>
+        <h3><strong>New Student Information</strong></h3>
+        <input type='text' value='First Name' id='fName' onfocus='removeText(this)' onblur='checkValue(this)'>
+        <input type='text' value='Last Name' id='lName' onfocus='removeText(this)' onblur='checkValue(this)'>
+        <input type='text' value='Student ID' id='sID' onfocus='removeText(this)' onblur='checkValue(this)'>
+        <button class='w3-btn w3-green w3-round' onclick='addItem()'>Add Student</button>
+    </div>
+
+    <script>
+    //DOM DEFAULT VALUES
+        document.getElementById('fName').defaultValue = 'First Name';
+        document.getElementById('lName').defaultValue = 'Last Name';
+        document.getElementById('sID').defaultValue = 'Student ID';
+    </script>
+
+    <div class='w3-container w3-margin-bottom w3-center w3-light-blue' id='pageSelection'>
+        <h3><strong>Student Selection</strong></h3>
+        <p class='w3-text-red'><strong>** To remove students go to the student's grade sheet **</strong></p>
+        <button class='w3-btn w3-green w3-round' onclick='saveList()'>SAVE</button>
+        <div class='w3-container w3-margin-bottom'></div>
+    </div>
+
+    <div class='w3-container' id='pageDynamics'>
+        <div class='w3-row'>
+            <div class='w3-col l3 w3-center w3-grey w3-border-green w3-bottombar w3-topbar w3-leftbar w3-rightbar'>
+                <h4><strong>First Name</strong></h4>
+            </div>
+            <div class='w3-col l3 w3-center w3-grey w3-border-green w3-bottombar w3-topbar w3-leftbar w3-rightbar''>
+                <h4><strong>Last Name</strong></h4>
+            </div>
+            <div class='w3-col l3 w3-center w3-grey w3-border-green w3-bottombar w3-topbar w3-leftbar w3-rightbar''>
+                <h4><strong>Student ID</strong></h4>
+            </div>
+            <div class='w3-col l3 w3-center w3-grey w3-border-green w3-bottombar w3-topbar w3-leftbar w3-rightbar''>
+                <h4><strong>Grade Sheet</strong></h4>
+            </div>
+        </div>
+        <!-- DYNAMIC ROWS HERE-->
+    </div>
+
+    <div class='w3-container' id='assignmentsList'>
+        
+    </div>
+
+    <script>
+        checkList();
+    </script>
+
+</body>
+</html>
