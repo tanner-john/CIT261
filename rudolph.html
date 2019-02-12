@@ -12,20 +12,34 @@
 </head>
 <body>
 
+    <!-- NAVIGATION -->
+    <div class='w3-bar w3-black'>
+        <a href='index.html' class='w3-bar-item w3-button'>HOME</a>
+    </div>
+
     <div class='w3-container w3-center'>
         <h1 class='w3-text-red'><strong>Tribute To Rudolph TRNR</strong></h1>
     </div>
 
     <div class='w3-container w3-center' id='movie'>
-        <h3 class='w3-text-red'><strong>Rudolph The Red Nose Reindeer "THE MOVIE"!</strong></h3><br>
+        <h3 class='w3-text-red'><strong>Rudolph The Red Nose Reindeer THE MOVIE!</strong></h3><br>
         <button class='w3-btn w3-green w3-round' onclick="control()">Play/Pause</button> 
         <button class='w3-btn w3-green w3-round' onclick="maximize()">Large</button>
         <button class='w3-btn w3-green w3-round' onclick="minimize()">Small</button>
-        <button class='w3-btn w3-green w3-round' onclick="normalize()">Normal</button>
+        <button class='w3-btn w3-green w3-round' onclick="reset()">Normal</button>
         <br><br>
+    </div>
+    <div class='w3-container w3-center w3-margin'>
         <video id="rudolph" width="480">
-            <source src="video/RTRNR.mp4" type="video/mp4">
+            <source src="https://tanner-john.github.io/CIT261/video/RTRNR.mp4" type="video/mp4">
         </video><br>
+    </div>
+
+    <div class='w3-container w3-center' id='movie'>
+        <h3 class='w3-text-red'><strong>Rudolph The Red Nose Reindeer THE SONG!</strong></h3><br>
+        <audio controls>
+            <source src="/audio/RudolphSong.mp3" type="audio/mpeg">
+        </audio>
     </div>
 
 
@@ -67,6 +81,10 @@
         ❆
         </div>
     </div>
+
+    <script>
+        getMovie();
+    </script>
 
 </body>
 </html>

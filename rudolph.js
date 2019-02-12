@@ -1,4 +1,8 @@
-var myMovie = document.getElementById("rudolph"); 
+var myMovie; 
+
+function getMovie(){
+    myMovie = document.getElementById("rudolph");
+}
 
 function control() { 
   if (myMovie.paused) 
@@ -8,13 +12,13 @@ function control() {
 } 
 
 function maximize() { 
-    myMovie.width = 960; 
+    myMovie.width = 720; 
 } 
 
 function minimize() { 
-    myMovie.width = 240; 
+    myMovie.width = 240;
 } 
 
-function normalize() { 
+function reset() { 
     myMovie.width = 480; 
 }
