@@ -93,11 +93,14 @@ function assignmentPage(student){
     document.getElementById('pageSelection').innerHTML =    "<h3><strong>Assignments</strong></h3><br>\
                                                             <h4>Name: <strong>" + student.fname + " " + student.lname + "</strong></h4>\
                                                             <div class='w3-row'>\
-                                                                <div class='w3-col l6 w3-center w3-margin-bottom'>\
+                                                                <div class='w3-col l4 w3-center w3-margin-bottom'>\
                                                                     <button class='w3-btn w3-green w3-round' onclick='saveAssignments()'>SAVE ASSIGNMENTS</button>\
                                                                 </div>\
-                                                                <div class='w3-col l6 w3-center w3-margin-bottom'>\
-                                                                    <button class='w3-btn w3-green w3-round' onclick='saveGrades(" + student + ")'>SAVE GRADES</button>\
+                                                                <div class='w3-col l4 w3-center w3-margin-bottom'>\
+                                                                    <button class='w3-btn w3-green w3-round' onclick='saveGrades(" + student.id + ")'>SAVE GRADES</button>\
+                                                                </div>\
+                                                                <div class='w3-col l4 w3-center w3-margin-bottom'>\
+                                                                    <button class='w3-btn w3-yellow w3-text-black w3-round' onclick='home()'><strong>CLASSROOM</strong></button>\
                                                                 </div>\
                                                             </div>";
     document.getElementById('pageDynamics').innerHTML = "<div class='w3-row'>\
@@ -191,6 +194,43 @@ function updateTotal(assignment){
 /****************************
  * Grades Functions
  ***************************/
+
+var grades = new Array();
+
+function saveGrades(studentid){
+    var z = 0;
+    var index;
+    var found = false;
+
+    //set index of the array
+    if(localStorage.grades){
+        grades = JSON.parse(localStorage.grades);
+        for(var i = 0; i < grades.length; i++){
+            if(grades[i][z] == studentid){
+                index = i;
+                found = true;
+            }
+        }
+    }
+
+    if(!found){
+        index = grades.length;
+    }
+
+    grades[index] = new Array();
+    grades[index][z] = studentid;
+    z++;
+
+    var capture = document.getElementById('pageDynamics');
+    var earned = capture.getElementsByTagName('input');
+
+    for(x in earned){
+        grades[index][z] = earned[x].value;
+        z++;
+    }
+
+    localStorage.grades = JSON.stringify(grades);
+}
 
 /****************************
  * Insert Style Functions
@@ -325,8 +365,32 @@ function loadAssignments(){
 }
 
 function loadGrades(student){
+    var z = 0;
+    var index;
+
     if(localStorage.grades){
         grades = JSON.parse(localStorage.grades);
-
+        for(var i = 0; i < grades.length; i++){
+            if(grades[i][z] == student.id){
+                index = i;
+            }
+        }
+        z++;
+        var capture = document.getElementById('pageDynamics');
+        var earned = capture.getElementsByTagName('input');
+        for(var x = 0; x < earned.length; x++){
+            earned[x].value = grades[index][z];
+            updateTotal(aList[x]);
+            z++;
+        }
     }
+}
+
+function clearStorage(){
+    localStorage.clear();
+    location.reload();
+}
+
+function home(){
+    location.reload();
 }
