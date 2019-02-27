@@ -8,15 +8,18 @@
     height: 250px;
 }
 
-.cardImg{
-    width: auto;
-    height: 150px;
-}
-
 .linkImg{
 	height: 100px;
 	width: auto;
 	margin-top: 10px;
+}
+
+/***************************
+ * Card Match CSS Animations and Properties
+ **************************/
+.cardImg{
+    width: auto;
+    height: 150px;
 }
 
 .flip-card {
@@ -48,28 +51,75 @@
 
 /* The animation code */
 @keyframes colorChange {
-	from {color: white;}
-	to {color: red;}
+	from {color: red;}
+	to {color: blue;}
 }
 
 @keyframes crazyColor {
 	from{background-color: blue;}
-	to {background-color: yellow;}
+	to {background-color: red;}
+}
+
+@keyframes cardMoveLeft {
+	from{left: 0%; top:50px;}
+	to{left: 100%; top:50px;}
+}
+
+@keyframes cardMoveRight {
+	from{left: 100%; top:50px;}
+	to{left: 0%; top:50px;}
+}
+
+@keyframes cardSpinLeft {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+}
+
+@keyframes cardSpinRight {
+	from {transform: rotate(360deg);}
+	to {transform: rotate(0deg);}
+}
+
+.cardAnimation1 {
+	position: absolute;
+	animation-name: cardMoveLeft, cardSpinLeft;
+	animation-duration: 10s, 10s;
+	animation-direction: alternate;
+	animation-timing-function: linear, linear;
+	animation-iteration-count: infinite, infinite;
+}
+
+.cardAnimation2 {
+	position: absolute;
+	animation-name: cardMoveRight, cardSpinRight;
+	animation-duration: 10s, 10s;
+	animation-direction: alternate;
+	animation-timing-function: linear, linear;
+	animation-iteration-count: infinite, infinite;
 }
   
 /* The element to apply the animation to */
 #header {
+	color: red;
 	animation-name: colorChange;
-	animation-duration: 2s;
-	animation-iteration-count: 6;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
 
 #headerContainer{
 	animation-name: crazyColor;
-	animation-duration: 2s;
-	animation-iteration-count: 6;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 	animation-direction: alternate;
+}
+
+.cardTable {
+	background-image: url('pics/cardbackground.png');
+	background-repeat: no-repeat;
+	background-color: #cccccc;
 }
 
 .gradeBtn{
