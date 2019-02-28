@@ -49,7 +49,6 @@
 	transform: rotateY(180deg);
 }
 
-/* The animation code */
 @keyframes colorChange {
 	from {color: red;}
 	to {color: blue;}
@@ -97,8 +96,7 @@
 	animation-timing-function: linear, linear;
 	animation-iteration-count: infinite, infinite;
 }
-  
-/* The element to apply the animation to */
+
 #header {
 	color: red;
 	animation-name: colorChange;
