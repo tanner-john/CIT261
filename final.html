@@ -4,18 +4,40 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CSS Transform</title>
+    <title>Final Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" media="screen" href="final.css" />
     <script src="final.js"></script>
 </head>
 
-<body onload='boardSetup();'>
+<body onload='boardSetup(); checkUserName();'>
 
     <!-- NAVIGATION -->
     <div class='w3-bar w3-black'>
         <a href='index.html' class='w3-bar-item w3-button'>HOME</a>
+    </div>
+
+    <!-- Login Modal -->
+    <div class='w3-container'>
+        <div id="id01" class="w3-modal">
+            <div class='w3-modal-content w3-card-4'>
+                <header class='w3-container w3-teal'>
+                    <span onclick="document.getElementById('id01').style.display='none'; loadGuest();" class="w3-button w3-display-topright">&times;</span>
+                    <h2>Card Match Login</h2>
+                </header>
+                <div class="w3-modal-content">
+                    <div class="w3-container w3-center">
+                        <p>Please Enter Your Name...</p>
+                        <input type='text' value='Username' id='uName' onfocus='removeText(this);' onblur='checkValue(this);'>
+                        <button class='w3-btn w3-green w3-round' id='uNameBtn' onclick='storeUserName();'>Submit</button>
+                    </div>
+                </div>
+                <footer class='w3-container w3-teal'>
+                    <p>*Stored in local storage.</p>
+                </footer>
+            </div>
+        </div>
     </div>
 
     <div class='w3-container w3-center' id='headerContainer' style='background-color: blue;'>
@@ -41,6 +63,12 @@
                     <h3>Attempts Left :<span id='attempts'> 10</span></h3>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class='w3-container w3-green w3-center'>
+        <div class='w3-row'>
+            <p id='nameTitle'></p>
         </div>
     </div>
 

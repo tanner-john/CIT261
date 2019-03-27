@@ -153,3 +153,41 @@ function flipCard(event){
 function stopTimer(){
     clearTimeout(timer);
 }
+
+function loadModal(){
+    document.getElementById('id01').style.display = 'block';
+}
+
+function checkUserName(){
+    if(localStorage.username)
+        loadUserInfo();
+    else
+        loadModal();
+}
+
+function storeUserName(){
+    var name = document.getElementById('uName').value;
+    localStorage.username = name;
+    document.getElementById('id01').style.display = 'block';
+    loadUserInfo();
+}
+
+function loadUserInfo(){
+    document.getElementById('nameTitle').innerHTML = 'User: ' + localStorage.username;
+}
+
+/****************************
+ * Insert Style Functions
+ ***************************/
+function removeText(x){
+    x.value = '';
+    x.style.background = 'yellow';
+}
+
+function checkValue(x){
+    if(x.value == ''){
+        x.value = x.defaultValue;
+    }
+    x.style.background = 'white';
+}
+
