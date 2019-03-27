@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSS Transform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="final.css" />
+    <script src="final.js"></script>
+</head>
+
+<body onload='boardSetup();'>
+
+    <!-- NAVIGATION -->
+    <div class='w3-bar w3-black'>
+        <a href='index.html' class='w3-bar-item w3-button'>HOME</a>
+    </div>
+
+    <div class='w3-container w3-center' id='headerContainer' style='background-color: blue;'>
+        <img src='pics/cardBack.png' alt='card back' height='50' width='auto' class='cardAnimation1'>
+        <h1 class='w3-text-white' id='header'><strong>CARD MATCH!</strong></h1>
+        <img src='pics/cardBack.png' alt='card back' height='50' width='auto' class='cardAnimation2'>
+    </div>
+
+    <div class='w3-container w3-green'>
+        <div class='w3-row'>
+            <div class='w3-col s4'>
+                <div class='w3-container w3-center'>
+                    <h3>Points :<span id='points'> 0</span></h3>
+                </div>
+            </div>
+            <div class='w3-col s4'>
+                <div class='w3-container w3-center' style='margin-top: 8px;'>
+                    <button class='w3-btn w3-red w3-round' id='resetButton' onclick='refresh()' style='visibility: hidden;'>RESET!</button>
+                </div>
+            </div>
+            <div class='w3-col s4'>
+                <div class='w3-container w3-center'>
+                    <h3>Attempts Left :<span id='attempts'> 10</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='cardTable'>
+        <div class='w3-row'>
+            <div class='w3-col l3' id='card0'></div>
+            <div class='w3-col l3' id='card1'></div>
+            <div class='w3-col l3' id='card2'></div>
+            <div class='w3-col l3' id='card3'></div>
+        </div>
+
+        <div class='w3-row'>
+            <div class='w3-col l3' id='card4'></div>
+            <div class='w3-col l3' id='card5'></div>
+            <div class='w3-col l3' id='card6'></div>
+            <div class='w3-col l3' id='card7'></div>
+        </div>
+
+        <div class='w3-row'>
+            <div class='w3-col l3' id='card8'></div>
+            <div class='w3-col l3' id='card9'></div>
+            <div class='w3-col l3' id='card10'></div>
+            <div class='w3-col l3' id='card11'></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
