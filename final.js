@@ -1,3 +1,16 @@
+var data;
+
+var request = new XMLHttpRequest();
+request.open('GET', 'https://tanner-john.github.io/CIT261/cards.json');
+request.onload = function(){
+    var rawData = request.responseText;
+    data = JSON.parse(rawData);
+}
+request.send();
+
+console.log(data);
+
+
 //Game Object
 var Card = function(name, value, id, img) {
     this.name = name;
