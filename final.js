@@ -20,7 +20,8 @@ var Card = function(name, value, id, img) {
 }
 
 function createCards(jsonObj){
-    var card1 = new Card(jsonObj.cards[0].name, jsonObj.cards[0].value, jsonObj.cards[0].id, jsonObj.cards[0].image);
+    var x = 1
+    var card1 = new Card(jsonObj[x].name, jsonObj[x].value, jsonObj[x].id, jsonObj[x].image);
     console.log(card1);
 }
 
