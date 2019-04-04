@@ -1,17 +1,4 @@
-var requestURL = 'https://tanner-john.github.io/CIT261/cards.json';
-
-// AJAX REQUEST
-var request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
-request.onload = function(){
-    var cardData = request.response;
-    console.log(cardData);
-    createCards(cardData);
-}
-
-//Game Object
+// Game Object
 var Card = function(name, value, id, img) {
     this.name = name;
     this.value = value;
@@ -19,30 +6,12 @@ var Card = function(name, value, id, img) {
     this.img = img;
 }
 
-function createCards(jsonObj){
-    var x = 1
-    var jsonCards = jsonObj['cards'];
-    console.log(jsonCards);
-    var card1 = new Card(jsonCards[x].name, jsonCards[x].value, jsonCards[x].id, jsonCards[x].image);
-    console.log(card1.name);
-}
+// Game Objects Array
+var cards = new Array();
+var easyDeck = new Array();
+var medDeck = new Array();
 
-//Object Creation
-var as1 = new Card('Ace of Spade 1', 0, 'as1', 'pics/aceofspades.png');
-var as2 = new Card('Ace of Spade 2', 0, 'as2', 'pics/aceofspades.png');
-var ac1 = new Card('Ace of Clubs 1', 1, 'ac1', 'pics/aceofclubs.png');
-var ac2 = new Card('Ace of Clubs 2', 1, 'ac2', 'pics/aceofclubs.png');
-var ah1 = new Card('Ace of Hearts 1', 2, 'ah1', 'pics/aceofhearts.png');
-var ah2 = new Card('Ace of Hearts 2', 2, 'ah2', 'pics/aceofhearts.png');
-var ad1 = new Card('Ace of Diamonds 1', 3, 'ad1', 'pics/aceofdiamonds.png');
-var ad2 = new Card('Ace of Diamonds 2', 3, 'ad2', 'pics/aceofdiamonds.png');
-var sk1 = new Card('Suicide King 1', 4, 'sk1', 'pics/suicideking.png');
-var sk2 = new Card('Suicide King 2', 4, 'sk2', 'pics/suicideking.png');
-var oej1 = new Card('One Eyed Jack 1', 5, 'oej1', 'pics/oneeyedjack.png');
-var oej2 = new Card('One Eyed Jack 2', 5, 'oej2','pics/oneeyedjack.png');
-
-//Game Variables
-var cards = new Array(as1, as2, ac1, ac2, ah1, ah2, ad1, ad2, sk1, sk2, oej1, oej2);
+// Game Variables
 var flipCounter = false;
 var flipOne = 0;
 var flipTwo = 0;
@@ -53,20 +22,80 @@ var cardID2 = '';
 var eventTarget1 = '';
 var eventTarget2 = '';
 var timer;
+var easy = 6;
+var medium = 12;
+var hard = 24;
+
+// AJAX REQUEST
+var requestURL = 'https://tanner-john.github.io/CIT261/cards.json';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = function(){
+    var cardData = request.response;
+    console.log(cardData);
+    createCards(cardData);
+    cards.sort(compare);
+    splitDecks(cards);
+}
+
+// Card Object Creation Function
+function createCards(jsonObj){
+    var x = 1
+    var jsonCards = jsonObj['cards'];
+    for(var i = 0; i < jsonCards.length; i++){
+        cards[i] = new Card(jsonCards[i].name, jsonCards[i].value, jsonCards[i].id, jsonCards[i].image);
+        console.log(cards[i]);
+    }
+}
+
+// Split Deck into 3 decks
+function splitDecks(deck){
+    for(var e = 0; e < easy; e++){
+        easyDeck[e] = deck[e];
+    }
+    for(var m = 0; m < medium; m++){
+        medDeck[m] = deck[m];
+    }
+}
+
+// Sort Cards for Match Values
+function compare(a, b){
+    if(a.value < b.value)
+        return -1;
+    if(a.value > b.value)
+        return 1;
+    return 0;
+}
+
+// Select Difficulty
+function setBoard(){
+    var selection = document.getElementById('level').value;
+    if(selection == 'EASY'){
+        boardSetup(easy, easyDeck);
+    }
+    else if(selection == 'MEDIUM'){
+        boardSetup(medium, medDeck);
+    }
+    else{
+        boardSetup(hard, cards);
+    }
+}
 
 //Dynamically Setup The Board
-function boardSetup(){
-    shuffle(cards);
-    consoleCards(cards);
+function boardSetup(level, deck){
+    shuffle(deck);
+    consoleCards(deck);
     document.getElementById('resetButton').style.visibility = 'visible';
-    for(var x = 0; x < cards.length; x++){
+    for(var x = 0; x < level; x++){
         document.getElementById('card' + x).innerHTML = "<div class='flip-card w3-margin' id='flip-card" + x + "'>\
                                                             <div class='flip-card-inner' id='flip-card-inner" + x + "'>\
                                                                 <div class='flip-card-front'>\
-                                                                    <img src='pics/cardBack.png' alt='Back of Playing Card' class='cardImg' onclick='flipCard(event)' id='" + cards[x].id + "'>\
+                                                                    <img src='pics/cardBack.png' alt='Back of Playing Card' class='cardImg' onclick='flipCard(event)' id='" + deck[x].id + "'>\
                                                                 </div>\
                                                                 <div class='flip-card-back'>\
-                                                                    <img src='" + cards[x].img + "' alt='" + cards[x].name + "' class='cardImg'>\
+                                                                    <img src='" + deck[x].img + "' alt='" + deck[x].name + "' class='cardImg'>\
                                                                 </div>\
                                                             </div>\
                                                         </div>";
@@ -79,22 +108,18 @@ function refresh(){
     totalFlips = 10;
     document.getElementById('points').innerHTML = ' ' + points;
     document.getElementById('attempts').innerHTML = ' ' + totalFlips;
-    boardSetup();
+    setBoard();
     flipCounter = false;
     clearTimeout(timer);
 }
 
 // Game Functions
+
+// Shuffle Deck
 function shuffle(array) {
     var m = array.length, t, i;
-
-    // While there remain elements to shuffle…
     while (m) {
-
-        // Pick a remaining element…
         i = Math.floor(Math.random() * m--);
-
-        // And swap it with the current element.
         t = array[m];
         array[m] = array[i];
         array[i] = t;
@@ -175,10 +200,7 @@ function stopTimer(){
     clearTimeout(timer);
 }
 
-function loadModal(){
-    document.getElementById('id01').style.display = 'block';
-}
-
+// Check if this is a return user
 function checkUserName(){
     if(localStorage.username)
         loadUserInfo();
@@ -186,15 +208,19 @@ function checkUserName(){
         loadModal();
 }
 
+function loadUserInfo(){
+    document.getElementById('nameTitle').innerHTML = 'User: ' + localStorage.username;
+}
+
+function loadModal(){
+    document.getElementById('id01').style.display = 'block';
+}
+
 function storeUserName(){
     var name = document.getElementById('uName').value;
     localStorage.username = name;
     document.getElementById('id01').style.display = 'none';
     loadUserInfo();
-}
-
-function loadUserInfo(){
-    document.getElementById('nameTitle').innerHTML = 'User: ' + localStorage.username;
 }
 
 function loadGuest(){
@@ -215,4 +241,3 @@ function checkValue(x){
     }
     x.style.background = 'white';
 }
-
