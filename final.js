@@ -1,14 +1,16 @@
+// API JSON OBJECT
 var data;
 
+// AJAX REQUEST
 var request = new XMLHttpRequest();
-request.open('GET', 'https://tanner-john.github.io/CIT261/cards.json');
-request.onload = function(){
-    var rawData = request.responseText;
-    data = JSON.parse(rawData);
+request.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        data = JSON.parse(this.responseText);
+        console.log(data);
+    }
 }
+request.open('GET', 'https://tanner-john.github.io/CIT261/cards.json');
 request.send();
-
-console.log(data);
 
 
 //Game Object
@@ -181,7 +183,7 @@ function checkUserName(){
 function storeUserName(){
     var name = document.getElementById('uName').value;
     localStorage.username = name;
-    document.getElementById('id01').style.display = 'block';
+    document.getElementById('id01').style.display = 'none';
     loadUserInfo();
 }
 
