@@ -1,148 +1,146 @@
 {
-    "cards":{
-        "Ace of Spades 1": {
-            "name": "Ace of Spades",
-            "value": 0,
-            "id": "as1",
-            "image": "pics/aceofspades.png"
-        },
-        "Ace of Spades 2": {
-            "name": "Ace of Spades",
-            "value": 0,
-            "id": "as2",
-            "image": "pics/aceofspades.png"
-        },
-        "Ace of Clubs 1": {
-            "name": "Ace of Clubs",
-            "value": 1,
-            "id": "ac1",
-            "image": "pics/aceofclubs.png"
-        },
-        "Ace of Clubs 2": {
-            "name": "Ace of Clubs",
-            "value": 1,
-            "id": "ac2",
-            "image": "pics/aceofclubs.png"
-        },
-        "Ace of Hearts 1": {
-            "name": "Ace of Hearts",
-            "value": 2,
-            "id": "ah1",
-            "image": "pics/aceofhearts.png"
-        },
-        "Ace of Hearts 2": {
-            "name": "Ace of Hearts",
-            "value": 2,
-            "id": "ah2",
-            "image": "pics/aceofhearts.png"
-        },
-        "Ace of Diamonds 1": {
-            "name": "Ace of Diamonds",
-            "value": 3,
-            "id": "ad1",
-            "image": "pics/aceofdiamonds.png"
-        },
-        "Ace of Diamonds 2": {
-            "name": "Ace of Diamonds",
-            "value": 3,
-            "id": "ad2",
-            "image": "pics/aceofdiamonds.png"
-        },
-        "Suicide King 1": {
-            "name": "Suicide King",
-            "value": 4,
-            "id": "sk1",
-            "image": "pics/suicideking.png"
-        },
-        "Suicide King 2": {
-            "name": "Suicide King",
-            "value": 4,
-            "id": "sk2",
-            "image": "pics/suicideking.png"
-        },
-        "One Eyed Jack 1": {
-            "name": "One Eyed Jack",
-            "value": 5,
-            "id": "oej1",
-            "image": "pics/oneeyedjack.png"
-        },
-        "One Eyed Jack 2": {
-            "name": "One Eyed Jack",
-            "value": 5,
-            "id": "oej2",
-            "image": "pics/oneeyedjack.png"
-        },
-        "Fancy Ace 1": {
-            "name": "Fancy Ace",
-            "value": 6,
-            "id": "fa1",
-            "image": "pics/ace.png"
-        },
-        "Fancy Ace 2": {
-            "name": "Fancy Ace",
-            "value": 6,
-            "id": "fa2",
-            "image": "pics/ace.png"
-        },
-        "Fancy King 1": {
-            "name": "Fancy King",
-            "value": 7,
-            "id": "fk1",
-            "image": "pics/king.png"
-        },
-        "Fancy King 2": {
-            "name": "Fancy King",
-            "value": 7,
-            "id": "fk2",
-            "image": "pics/king.png"
-        },
-        "Fancy Queen 1": {
-            "name": "Fancy Queen",
-            "value": 8,
-            "id": "fq1",
-            "image": "pics/queen.png"
-        },
-        "Fancy Queen 2": {
-            "name": "Fancy Queen",
-            "value": 8,
-            "id": "fq2",
-            "image": "pics/queen.png"
-        },
-        "Fancy Jack 1": {
-            "name": "Fancy Jack",
-            "value": 9,
-            "id": "fj1",
-            "image": "pics/jack.png"
-        },
-        "Fancy Jack 2": {
-            "name": "Fancy Jack",
-            "value": 9,
-            "id": "fj2",
-            "image": "pics/jack.png"
-        },
-        "Old King 1": {
-            "name": "Old King",
-            "value": 10,
-            "id": "ok1",
-            "image": "pics/oldking.png"
-        },
-        "Old King 2": {
-            "name": "Old King",
-            "value": 10,
-            "id": "ok2",
-            "image": "pics/oldking.png"
-        },
-        "Joker 1": {
-            "name": "Joker",
-            "value": 11,
-            "id": "jk1",
-            "image": "pics/joker.png"
-        },
-        "Joker 2": {
-            "name": "Joker",
-            "value": 11,
-            "id": "jk2",
-            "image": "pics/joker.png"
-        }
+    "Ace of Spades 1": {
+        "name": "Ace of Spades",
+        "value": 0,
+        "id": "as1",
+        "image": "pics/aceofspades.png"
+    },
+    "Ace of Spades 2": {
+        "name": "Ace of Spades",
+        "value": 0,
+        "id": "as2",
+        "image": "pics/aceofspades.png"
+    },
+    "Ace of Clubs 1": {
+        "name": "Ace of Clubs",
+        "value": 1,
+        "id": "ac1",
+        "image": "pics/aceofclubs.png"
+    },
+    "Ace of Clubs 2": {
+        "name": "Ace of Clubs",
+        "value": 1,
+        "id": "ac2",
+        "image": "pics/aceofclubs.png"
+    },
+    "Ace of Hearts 1": {
+        "name": "Ace of Hearts",
+        "value": 2,
+        "id": "ah1",
+        "image": "pics/aceofhearts.png"
+    },
+    "Ace of Hearts 2": {
+        "name": "Ace of Hearts",
+        "value": 2,
+        "id": "ah2",
+        "image": "pics/aceofhearts.png"
+    },
+    "Ace of Diamonds 1": {
+        "name": "Ace of Diamonds",
+        "value": 3,
+        "id": "ad1",
+        "image": "pics/aceofdiamonds.png"
+    },
+    "Ace of Diamonds 2": {
+        "name": "Ace of Diamonds",
+        "value": 3,
+        "id": "ad2",
+        "image": "pics/aceofdiamonds.png"
+    },
+    "Suicide King 1": {
+        "name": "Suicide King",
+        "value": 4,
+        "id": "sk1",
+        "image": "pics/suicideking.png"
+    },
+    "Suicide King 2": {
+        "name": "Suicide King",
+        "value": 4,
+        "id": "sk2",
+        "image": "pics/suicideking.png"
+    },
+    "One Eyed Jack 1": {
+        "name": "One Eyed Jack",
+        "value": 5,
+        "id": "oej1",
+        "image": "pics/oneeyedjack.png"
+    },
+    "One Eyed Jack 2": {
+        "name": "One Eyed Jack",
+        "value": 5,
+        "id": "oej2",
+        "image": "pics/oneeyedjack.png"
+    },
+    "Fancy Ace 1": {
+        "name": "Fancy Ace",
+        "value": 6,
+        "id": "fa1",
+        "image": "pics/ace.png"
+    },
+    "Fancy Ace 2": {
+        "name": "Fancy Ace",
+        "value": 6,
+        "id": "fa2",
+        "image": "pics/ace.png"
+    },
+    "Fancy King 1": {
+        "name": "Fancy King",
+        "value": 7,
+        "id": "fk1",
+        "image": "pics/king.png"
+    },
+    "Fancy King 2": {
+        "name": "Fancy King",
+        "value": 7,
+        "id": "fk2",
+        "image": "pics/king.png"
+    },
+    "Fancy Queen 1": {
+        "name": "Fancy Queen",
+        "value": 8,
+        "id": "fq1",
+        "image": "pics/queen.png"
+    },
+    "Fancy Queen 2": {
+        "name": "Fancy Queen",
+        "value": 8,
+        "id": "fq2",
+        "image": "pics/queen.png"
+    },
+    "Fancy Jack 1": {
+        "name": "Fancy Jack",
+        "value": 9,
+        "id": "fj1",
+        "image": "pics/jack.png"
+    },
+    "Fancy Jack 2": {
+        "name": "Fancy Jack",
+        "value": 9,
+        "id": "fj2",
+        "image": "pics/jack.png"
+    },
+    "Old King 1": {
+        "name": "Old King",
+        "value": 10,
+        "id": "ok1",
+        "image": "pics/oldking.png"
+    },
+    "Old King 2": {
+        "name": "Old King",
+        "value": 10,
+        "id": "ok2",
+        "image": "pics/oldking.png"
+    },
+    "Joker 1": {
+        "name": "Joker",
+        "value": 11,
+        "id": "jk1",
+        "image": "pics/joker.png"
+    },
+    "Joker 2": {
+        "name": "Joker",
+        "value": 11,
+        "id": "jk2",
+        "image": "pics/joker.png"
     }
 }

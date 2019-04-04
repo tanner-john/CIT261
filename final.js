@@ -1,17 +1,15 @@
-// API JSON OBJECT
-var data;
+var requestURL = 'https://tanner-john.github.io/CIT261/cards.json';
 
 // AJAX REQUEST
 var request = new XMLHttpRequest();
-request.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-        data = JSON.parse(this.responseText);
-        console.log(data);
-    }
-}
-request.open('GET', 'https://tanner-john.github.io/CIT261/cards.json');
+request.open('GET', requestURL);
+request.responseType = 'json';
 request.send();
-
+request.onload = function(){
+    var cardData = request.response;
+    console.log(cardData);
+    createCards(cardData);
+}
 
 //Game Object
 var Card = function(name, value, id, img) {
@@ -19,6 +17,11 @@ var Card = function(name, value, id, img) {
     this.value = value;
     this.id = id;
     this.img = img;
+}
+
+function createCards(jsonObj){
+    var card1 = new Card(jsonObj.cards[0].name, jsonObj.cards[0].value, jsonObj.cards[0].id, jsonObj.cards[0].image);
+    console.log(card1);
 }
 
 //Object Creation
@@ -189,6 +192,10 @@ function storeUserName(){
 
 function loadUserInfo(){
     document.getElementById('nameTitle').innerHTML = 'User: ' + localStorage.username;
+}
+
+function loadGuest(){
+    document.getElementById('nameTitle').innerHTML = 'User: Guest';
 }
 
 /****************************
