@@ -12,16 +12,19 @@ var easyDeck = new Array();
 var medDeck = new Array();
 
 // Game Variables
+var newGame = true;
 var flipCounter = false;
 var flipOne = 0;
 var flipTwo = 0;
-var totalFlips = 10;
+var totalFlips;
 var points = 0;
 var cardID1 = '';
 var cardID2 = '';
 var eventTarget1 = '';
 var eventTarget2 = '';
 var timer;
+var totalMatches;
+var match = 0;
 var easy = 6;
 var medium = 12;
 var hard = 24;
@@ -71,23 +74,42 @@ function compare(a, b){
 
 // Select Difficulty
 function setBoard(){
+    document.getElementById('id02').style.display = 'none';
+    document.getElementById('id03').style.display = 'none';
+    match = 0;
     var selection = document.getElementById('level').value;
     if(selection == 'EASY'){
+        totalMatches = easy / 2;
+        if(newGame){
+            totalFlips = 10;
+        }
         boardSetup(easy, easyDeck);
     }
     else if(selection == 'MEDIUM'){
+        totalMatches = medium / 2;
+        if(newGame){
+            totalFlips = 15;
+        }
         boardSetup(medium, medDeck);
     }
     else{
+        totalMatches = hard / 2;
+        if(newGame){
+            totalFlips = 20;
+        }
         boardSetup(hard, cards);
     }
 }
 
 //Dynamically Setup The Board
 function boardSetup(level, deck){
+    if(newGame){
+        newGame = false;
+    }
     shuffle(deck);
     consoleCards(deck);
     document.getElementById('resetButton').style.visibility = 'visible';
+    document.getElementById('attempts').innerHTML = ' ' + totalFlips;
     for(var x = 0; x < level; x++){
         document.getElementById('card' + x).innerHTML = "<div class='flip-card w3-margin' id='flip-card" + x + "'>\
                                                             <div class='flip-card-inner' id='flip-card-inner" + x + "'>\
@@ -105,12 +127,18 @@ function boardSetup(level, deck){
 // Refresh the game
 function refresh(){
     points = 0;
-    totalFlips = 10;
     document.getElementById('points').innerHTML = ' ' + points;
-    document.getElementById('attempts').innerHTML = ' ' + totalFlips;
     setBoard();
     flipCounter = false;
     clearTimeout(timer);
+}
+
+function reset(){
+    for(var z = 0; z < 24; z++){
+        document.getElementById('card' + z).innerHTML = '';
+    }
+    newGame = true;
+    refresh();
 }
 
 // Game Functions
@@ -163,6 +191,7 @@ function checkMatch(){
     if(flipOne == flipTwo){
         points += 36;
         console.log('Match!');
+        match++;
     }
     else{
         timer = setTimeout(function(){
@@ -173,10 +202,11 @@ function checkMatch(){
     }
     document.getElementById('points').innerHTML = ' ' + points;
     document.getElementById('attempts').innerHTML = ' ' + totalFlips;
-    if(points == 216){
-        var winAlert = setTimeout(function(){
-            alert('You Won!');
-        }, 2000);
+    if(match == totalMatches){
+        document.getElementById('id02').style.display = 'block';
+    }
+    if(totalFlips == 0){
+        document.getElementById('id03').style.display = 'block';
     }
 }
 

@@ -40,6 +40,44 @@
         </div>
     </div>
 
+    <!-- WIN Modal -->
+    <div class='w3-container'>
+        <div id="id02" class="w3-modal">
+            <div class='w3-modal-content w3-card-4'>
+                <header class='w3-container w3-teal'>
+                    <h2>YOU WON!!!</h2>
+                </header>
+                <div class="w3-modal-content">
+                    <div class="w3-container w3-center w3-margin">
+                        <button class='w3-btn w3-green w3-round' onclick='setBoard();'>CONTINUE?</button>
+                    </div>
+                </div>
+                <footer class='w3-container w3-teal'>
+                    <p>*Stored in local storage.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOSE Modal -->
+    <div class='w3-container'>
+        <div id="id03" class="w3-modal">
+            <div class='w3-modal-content w3-card-4'>
+                <header class='w3-container w3-teal'>
+                    <h2>SORRY, YOU LOST!</h2>
+                </header>
+                <div class="w3-modal-content">
+                    <div class="w3-container w3-center w3-margin">
+                        <button class='w3-btn w3-green w3-round' onclick='reset();'>CONTINUE?</button>
+                    </div>
+                </div>
+                <footer class='w3-container w3-teal'>
+                    <p>*Stored in local storage.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
     <div class='w3-container w3-center' id='headerContainer' style='background-color: blue;'>
         <img src='pics/cardBack.png' alt='card back' height='50' width='auto' class='cardAnimation1'>
         <h1 class='w3-text-white' id='header'><strong>CARD MATCH!</strong></h1>
@@ -55,7 +93,7 @@
             </div>
             <div class='w3-col s4'>
                 <div class='w3-container w3-center' style='margin-top: 8px;'>
-                    <button class='w3-btn w3-red w3-round' id='resetButton' onclick='refresh()' style='visibility: hidden;'>RESET!</button>
+                    <button class='w3-btn w3-red w3-round' id='resetButton' onclick='reset()' style='visibility: hidden;'>RESET!</button>
                 </div>
             </div>
             <div class='w3-col s4'>
@@ -81,7 +119,7 @@
                         <option value='MEDIUM'>MEDIUM</option>
                         <option value='HARD'>HARD</option>
                     </select>
-                    <button class='w3-btn w3-round w3-blue' onclick='setBoard();'>SUBMIT</button>
+                    <button class='w3-btn w3-round w3-blue' onclick='reset();'>SUBMIT</button>
                 </div>
             </div>
         </div>
