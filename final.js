@@ -254,7 +254,7 @@ function storeUserName(){
 }
 
 function loadGuest(){
-    document.getElementById('nameTitle').innerHTML = 'User: Guest';
+    document.getElementById('nameTitle').innerHTML = 'User: GUEST';
 }
 
 /****************************
